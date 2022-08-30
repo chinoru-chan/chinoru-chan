@@ -33,7 +33,7 @@ var init = () => {
 
     // c2
     {
-        let getDesc = (level) => "c_2=10^{" + level + "}";
+        let getDesc = (level) => "c_2=3^{" + level + "}";
         let getInfo = (level) => "c_2=" + getC2(level).toString(0);
         c2 = theory.createUpgrade(1, currency, new ExponentialCost(5, Math.log2(10)));
         c2.getDescription = (_) => Utils.getMath(getDesc(c2.level));
@@ -52,15 +52,15 @@ var init = () => {
 
     {
         c1Exp = theory.createMilestoneUpgrade(0, 3);
-        c1Exp.description = Localization.getUpgradeIncCustomExpDesc("c_1", "0.05");
-        c1Exp.info = Localization.getUpgradeIncCustomExpInfo("c_1", "0.05");
+        c1Exp.description = Localization.getUpgradeIncCustomExpDesc("c_1", "0.01");
+        c1Exp.info = Localization.getUpgradeIncCustomExpInfo("c_1", "0.01");
         c1Exp.boughtOrRefunded = (_) => theory.invalidatePrimaryEquation();
     }
 
     {
         c2Exp = theory.createMilestoneUpgrade(1, 3);
-        c2Exp.description = Localization.getUpgradeIncCustomExpDesc("c_2", "0.05");
-        c2Exp.info = Localization.getUpgradeIncCustomExpInfo("c_2", "0.05");
+        c2Exp.description = Localization.getUpgradeIncCustomExpDesc("c_2", "0.01");
+        c2Exp.info = Localization.getUpgradeIncCustomExpInfo("c_2", "0.01");
         c2Exp.boughtOrRefunded = (_) => theory.invalidatePrimaryEquation();
     }
     
